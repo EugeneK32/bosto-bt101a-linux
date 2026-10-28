@@ -1,0 +1,17 @@
+[Unit]
+Description=BOSTO BT-101A virtual display (Hermes-KMS)
+Documentation=https://github.com/MrOz59/Hermes-KMS
+After=graphical-session.target
+
+[Service]
+Type=simple
+Environment=BOSTO_FPS=60
+Environment=BOSTO_QUALITY=90
+EnvironmentFile=-%h/.config/bosto-hermes.conf
+ExecStart=%h/.local/share/bosto-hermes/run.sh
+Restart=on-failure
+RestartSec=3
+TimeoutStopSec=8
+
+[Install]
+WantedBy=default.target

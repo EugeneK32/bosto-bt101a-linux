@@ -1,0 +1,2 @@
+# BOSTO BT-101A / ArtInChip USB display: active desktop user may access USB device.
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="33c3", ATTR{idProduct}=="0e02", TAG+="uaccess"
